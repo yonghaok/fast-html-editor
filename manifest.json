@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "HTML 交互编辑器",
+  "version": "1.0.0",
+  "description": "在任意网页上交互式编辑 HTML 元素并生成可供 AI 读取的精确改动说明。",
+  "permissions": ["activeTab", "scripting", "storage", "unlimitedStorage", "clipboardWrite"],
+  "action": {
+    "default_title": "打开 HTML 交互编辑器"
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "commands": {
+    "toggle-editor": {
+      "suggested_key": { "default": "Ctrl+Shift+E", "mac": "Command+Shift+E" },
+      "description": "打开或关闭页面改动标注器"
+    }
+  },
+  "web_accessible_resources": [{
+    "resources": ["editor.css", "text-editor.css"],
+    "matches": ["<all_urls>"]
+  }]
+}
